@@ -23,7 +23,8 @@
         <div class="jumbotron py-3">
             <h1 class="text-center">{{title}}</h1>
             <p class="pt-3">
-                Hi all my name is B Rabiroshan Shubhankar . I am software developer . In this page you will be abel to know the current coved 19 cases all over world. Please follow all the guide line of our Gov and staye safe . Thank You
+                Hi all my name is B Rabiroshan Shubhankar . I am software developer . In this page you will be abel to know the current coved 19 cases all over world. Please follow all the guide line of our Gov and staye safe . Current status of world wide covide cases
+                are bellow but if you want to check a specifc country please give contry name in bellow input bix. Thank You
 
             </p>
 
@@ -55,14 +56,39 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
             <!-- all data end -->
-
+            <input type="text" class="form-control mt-4" placeholder="Enter country here" ng-model="c" ng-change="get_c_data()" />
+            <!-- c data -->
+            <div class="container-fluid" ng-if="c">
+                <h2 class="text-center mt-4 text-uppercase">Covide19 Status of {{c}}</h2>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h3>Confirmed Cases</h3>
+                                <h3>{{c_data.confirmed.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-success test-white">
+                            <div class="card-body">
+                                <h3>Recovered Cases</h3>
+                                <h3>{{c_data.recovered.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-danger test-white">
+                            <div class="card-body">
+                                <h3>Death Cases</h3>
+                                <h3>{{c_data.deaths.value}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- c data end -->
 
         </div>
     </div>
